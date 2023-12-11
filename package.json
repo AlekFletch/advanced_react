@@ -1,0 +1,32 @@
+{
+  "name": "ulbitv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekFletch/advanced_react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekFletch/advanced_react/issues"
+  },
+  "homepage": "https://github.com/AlekFletch/advanced_react#readme",
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@types/webpack": "^5.28.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  }
+}
