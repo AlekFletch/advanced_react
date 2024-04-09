@@ -1,0 +1,38 @@
+.PageError {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; // Высота окна занимает минимум всю видимую часть экрана
+
+    p {
+        margin: 0 0 20px; // Отступ снизу для кнопки
+        font-size: 1.5rem; // Размер шрифта для текста ошибки
+        text-align: center; // Выравнивание текста по центру
+
+        &:hover {
+            color: red; // Цвет текста при наведении мышкой
+        }
+    }
+
+    Button {
+        background-color: yellow; // Фоновый цвет кнопки
+        border: 1px solid black; // Рамка вокруг кнопки
+        color: darkblue; // Цвет текста кнопки
+        padding: 10px 20px; // Внутренние отступы для кнопки
+        text-transform: uppercase; // Преобразование текста кнопки в верхний регистр
+        font-weight: bold; // Жирность шрифта текста кнопки
+        cursor: pointer; // Курсор в виде указателя
+        transition: background-color 0.3s ease; // Плавное изменение фона при наведении
+
+        &:hover {
+            background-color: darken(yellow, 10%); // Затемнение фона при наведении
+        }
+
+        &:focus,
+        &:active {
+            outline: none; // Убрать контур при фокусе
+            border-color: darken(black, 10%); // Затемнение рамки при нажатии
+        }
+    }
+}
