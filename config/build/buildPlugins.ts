@@ -20,9 +20,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         new webpack.HotModuleReplacementPlugin(),
         new BundleAnalyzerPlugin({
             analyzerMode: 'static', // Режим отображения отчета
-            openAnalyzer: false,    // Не открывать отчет автоматически
+            openAnalyzer: false, // Не открывать отчет автоматически
         }),
 
-
-];
+    ];
 }

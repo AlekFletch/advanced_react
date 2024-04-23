@@ -1,5 +1,6 @@
 import { Button } from 'shared/ui/Button/Button';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface BugButtonProps {
     className?: string;
@@ -7,6 +8,7 @@ interface BugButtonProps {
 // Компонент кнопки с ошибкой (для тестирования)
 export const BugButton = ({ className }: BugButtonProps) => {
     const [error, setError] = useState();
+    const { t } = useTranslation();
     const onThrow = () => {
         // @ts-ignore
         setError(true);
@@ -21,7 +23,7 @@ export const BugButton = ({ className }: BugButtonProps) => {
         <Button
             onClick={onThrow}
         >
-            throw error
+            {t('throw error')}
         </Button>
     );
 };
