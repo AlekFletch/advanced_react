@@ -13,7 +13,7 @@ describe('Sidebar', () => {
     });
     test('toggles collapse state on button click', () => {
         renderWithTranslation(<Sidebar />);
-        const toggleButton = screen.getByRole('button', { name: /toggle/i });
+        const toggleButton = screen.getByTestId('sidebar-toggle');
         const sidebar = screen.getByTestId('sidebar');
 
         // Проверяем, что изначально sidebar не свернут
