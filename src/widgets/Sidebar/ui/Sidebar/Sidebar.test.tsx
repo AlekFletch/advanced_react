@@ -1,7 +1,6 @@
 import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from 'widgets/Sidebar';
-import cls from 'widgets/Sidebar/Sidebar.module.scss';
 import {
     renderWithTranslation,
 } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
@@ -17,18 +16,18 @@ describe('Sidebar', () => {
         const sidebar = screen.getByTestId('sidebar');
 
         // Проверяем, что изначально sidebar не свернут
-        expect(sidebar).not.toHaveClass(cls.collapsed);
+        expect(sidebar).not.toHaveClass('collapsed');
 
         // Имитируем клик по кнопке "Toggle"
         fireEvent.click(toggleButton);
 
         // Проверяем, что sidebar свернулся
-        expect(sidebar).toHaveClass(cls.collapsed);
+        expect(sidebar).toHaveClass('collapsed');
 
         // Имитируем ещё один клик по кнопке "Toggle"
         fireEvent.click(toggleButton);
 
         // Проверяем, что sidebar развернулся обратно
-        expect(sidebar).not.toHaveClass(cls.collapsed);
+        expect(sidebar).not.toHaveClass('collapsed');
     });
 });
