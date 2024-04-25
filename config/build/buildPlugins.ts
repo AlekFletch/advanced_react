@@ -24,7 +24,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         plugins.push(new BundleAnalyzerPlugin({
             analyzerMode: 'static', // Режим отображения отчета
             openAnalyzer: false, // Не открывать отчет автоматически
-        }),)
+        }));
     }
     return plugins;
 }
