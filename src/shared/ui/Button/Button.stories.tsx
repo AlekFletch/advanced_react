@@ -32,6 +32,15 @@ export const Clear: StoryObj<typeof Button> = {
     },
     decorators: [ThemeDecorator(Theme.LIGHT)],
 };
+
+export const ClearInverted: StoryObj<typeof Button> = {
+    ...Template,
+    args: {
+        children: 'Text',
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)],
+};
 export const Outline: StoryObj<typeof Button> = {
     ...Template,
     args: {
