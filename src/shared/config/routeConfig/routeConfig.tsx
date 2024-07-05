@@ -1,4 +1,3 @@
-import React from 'react';
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
@@ -13,6 +12,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
+    // последний
     [AppRoutes.NOT_FOUND]: '*',
 };
 

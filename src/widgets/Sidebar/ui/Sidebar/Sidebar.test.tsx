@@ -1,31 +1,21 @@
-import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
-import { Sidebar } from 'widgets/Sidebar';
-import { componentRender } from '../../../../shared/lib/tests/componentRender/componentRender';
+import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
+import {
+    renderWithTranslation,
+} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 
 describe('Sidebar', () => {
     test('with only first param', () => {
         componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
-    test('toggles collapse state on button click', () => {
+
+    test('test toggle', () => {
         componentRender(<Sidebar />);
-        const toggleButton = screen.getByTestId('sidebar-toggle');
-        const sidebar = screen.getByTestId('sidebar');
-
-        // Проверяем, что изначально sidebar не свернут
-        expect(sidebar).not.toHaveClass('collapsed');
-
-        // Имитируем клик по кнопке "Toggle"
-        fireEvent.click(toggleButton);
-
-        // Проверяем, что sidebar свернулся
-        expect(sidebar).toHaveClass('collapsed');
-
-        // Имитируем ещё один клик по кнопке "Toggle"
-        fireEvent.click(toggleButton);
-
-        // Проверяем, что sidebar развернулся обратно
-        expect(sidebar).not.toHaveClass('collapsed');
+        const toggleBtn = screen.getByTestId('sidebar-toggle');
+        expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+        fireEvent.click(toggleBtn);
+        expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
     });
 });

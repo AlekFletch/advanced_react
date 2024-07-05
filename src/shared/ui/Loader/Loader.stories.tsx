@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { Loader } from './Loader';
-import { ThemeDecorator } from '../../config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '../../../app/providers/ThemeProvider';
 
 export default {
     title: 'shared/Loader',
-    // eslint-disable-next-line no-undef
     component: Loader,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -13,13 +13,13 @@ export default {
     args: {
         to: '/',
     },
-} as Meta<typeof Loader>;
+} as ComponentMeta<typeof Loader>;
 
-export const Normal: StoryObj<typeof Loader> = {
-    args: {},
-};
-export const Dark: StoryObj<typeof Loader> = {
-    // eslint-disable-next-line no-undef
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
+const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {};
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

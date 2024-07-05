@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { NotFoundPage } from './NotFoundPage';
-import { ThemeDecorator } from '../../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '../../../app/providers/ThemeProvider';
 
 export default {
     title: 'pages/NotFoundPage',
@@ -9,13 +10,13 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as Meta<typeof NotFoundPage>;
+} as ComponentMeta<typeof NotFoundPage>;
 
-export const Normal: StoryObj<typeof NotFoundPage> = {
-    args: {},
-};
-export const Dark: StoryObj<typeof NotFoundPage> = {
-    // eslint-disable-next-line no-undef
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
+const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {};
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
