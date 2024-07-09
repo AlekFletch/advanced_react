@@ -1,0 +1,24 @@
+{
+  "posts": [
+    { "id": "1", "title": "json-server", "author": "typecode" },
+    { "id": "2", "title": "json-server 2", "author": "typecode" },
+    { "id": "3", "title": "json-server 3", "author": "typecode" },
+    { "id": "4", "title": "json-server 4", "author": "typecode" },
+    { "id": "5", "title": "json-server 5", "author": "typecode" },
+    { "id": "6", "title": "json-server 6", "author": "typecode" },
+    { "id": "7", "title": "json-server 7", "author": "typecode" },
+    { "id": "8", "title": "json-server 8", "author": "typecode" }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "users": [
+    { "id": "1",
+      "username": "admin",
+      "password": "123" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
